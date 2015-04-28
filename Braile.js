@@ -10,7 +10,7 @@ Braile.convertToBraile = function(str, lng){
     line[1]    = "";
     line[2]    = "";
 
-    var braile = Braile.alphabet.[lng ? lng : "en"];
+    var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = str.length - 1; i >= 0; i--) {
         var character = str[i];
         if(character){
@@ -31,7 +31,7 @@ Braile.convertToBraile = function(str, lng){
 Braile.convertFromBraile = function(str, lng){
     var returnStr = '';
     var newstr = str.split(str, endOfLine);
-    var braile = Braile.alphabet.[lng ? lng : "en"];
+    var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {
         for (var _iBraile in braile) {
             if( (newstr[0][i] + ' '  + newstr[1][i] + ' ' + newstr[2][i])

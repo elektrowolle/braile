@@ -1,1 +1,1 @@
-req
+Braile = require('./Braile');

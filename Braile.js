@@ -2,7 +2,7 @@ var rawgit = 'https://rawgit.com/elektrowolle/braile/master/';
 var endOfLine = '\r\n';
 var Braile = {};
 Braile.alphabet = {};
-Braile.alphabet.en = require(typeof local != 'undefined' ? 'alphabet/en.js' : rawgit + 'alphabet/en.js');
+require([typeof local != 'undefined' ? 'alphabet/en.js' : rawgit + 'alphabet/en.js']);
 
 Braile.convertToBraile = function(str, lng){
     var line   = [];

@@ -40,7 +40,7 @@ Braile.convertFromBraile = function(str, lng){
                 newstr[0][i - 1] + newstr[0][i]
                 ) == braile[_iBraile]){
 
-                returnStr = returnStr.concat(braile);
+                returnStr = returnStr.concat(_iBraile);
             }
 
         };

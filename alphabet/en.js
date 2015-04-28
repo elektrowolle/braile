@@ -49,5 +49,5 @@ var en = {
     "in"  : "-- -o o-"
 }
 
-if(module)
+if(typeof module != "undefined")
     module.export = en;

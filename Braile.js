@@ -1,8 +1,8 @@
-
+var rawgit = 'https://rawgit.com/elektrowolle/braile/master/';
 var endOfLine = '\r\n';
-Braile = {};
+var Braile = {};
 Braile.alphabet = {};
-Braile.alphabet.en = require('alphabet/en.json');
+Braile.alphabet.en = require(typeof local != 'undefined' ? 'alphabet/en.js' : rawgit + 'alphabet/en.js');
 
 Braile.convertToBraile = function(str, lng){
     var line   = [];
@@ -46,5 +46,5 @@ Braile.convertFromBraile = function(str, lng){
     return returnStr;
 }
 
-if(module)
+if(typeof module != "undefined")
     module.export = Braile;

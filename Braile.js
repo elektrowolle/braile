@@ -34,7 +34,7 @@ Braile.convertFromBraile = function(str, lng){
     var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {
         for (var _iBraile in braile) {
-            if(
+            if((
                 newstr[0][i - 1] + newstr[0][i] + ' ' +
                 newstr[0][i - 1] + newstr[0][i] + ' ' +
                 newstr[0][i - 1] + newstr[0][i] + ' ' +

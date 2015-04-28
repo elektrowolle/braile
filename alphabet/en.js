@@ -1,4 +1,4 @@
-{en: {
+var en = {
     "a"   : "o- -- --",
     "b"   : "o- o- --",
     "c"   : "oo -- --",
@@ -47,4 +47,7 @@
     "ff"  : "-- oo o-",
     "gg"  : "-- oo oo",
     "in"  : "-- -o o-"
-}}
+}
+
+if(module)
+    module.export = en;

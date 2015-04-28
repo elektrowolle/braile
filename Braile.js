@@ -2,7 +2,7 @@
 var endOfLine = '\r\n';
 Braile = {};
 Braile.alphabet = {};
-Braile.alphabet.en = require('./alphabet/en.json');
+Braile.alphabet.en = require('alphabet/en.json');
 
 Braile.convertToBraile = function(str, lng){
     var line   = [];

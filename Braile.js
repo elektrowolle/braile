@@ -36,8 +36,8 @@ Braile.convertFromBraile = function(str, lng){
         for (var _iBraile in braile) {
             if((
                 newstr[0][i - 1] + newstr[0][i] + ' ' +
-                newstr[0][i - 1] + newstr[0][i] + ' ' +
-                newstr[0][i - 1] + newstr[0][i]
+                newstr[1][i - 1] + newstr[1][i] + ' ' +
+                newstr[2][i - 1] + newstr[2][i]
                 ) == braile[_iBraile]){
 
                 returnStr = returnStr.concat(_iBraile);

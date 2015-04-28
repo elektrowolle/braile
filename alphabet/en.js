@@ -1,4 +1,4 @@
-var en = {
+Braile.alphabet.en = {
     "a"   : "o- -- --",
     "b"   : "o- o- --",
     "c"   : "oo -- --",
@@ -50,4 +50,4 @@ var en = {
 }
 
 if(typeof module != "undefined")
-    module.export = en;
+    module.export = Braile.alphabet.en;

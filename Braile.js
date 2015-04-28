@@ -30,12 +30,15 @@ Braile.convertToBraile = function(str, lng){
 
 Braile.convertFromBraile = function(str, lng){
     var returnStr = '';
-    var newstr = str.split(str, endOfLine);
+    var newstr = str.split(endOfLine);
     var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {
         for (var _iBraile in braile) {
-            if( (newstr[0][i] + ' '  + newstr[1][i] + ' ' + newstr[2][i])
-                == braile[_iBraile]){
+            if(
+                newstr[0][i - 1] + newstr[0][i] + ' ' +
+                newstr[0][i - 1] + newstr[0][i] + ' ' +
+                newstr[0][i - 1] + newstr[0][i] + ' ' +
+                ) == braile[_iBraile]){
 
                 returnStr = returnStr.concat(braile);
             }

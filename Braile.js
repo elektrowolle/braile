@@ -1,5 +1,5 @@
 var rawgit = 'https://rawgit.com/elektrowolle/braile/master/';
-var endOfLine = '\r\n';
+var endOfLine = '\n';
 var Braile = {};
 Braile.alphabet = {};
 require([typeof local != 'undefined' ? 'alphabet/en.js' : rawgit + 'alphabet/en.js']);

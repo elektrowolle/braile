@@ -75,9 +75,29 @@
     });
     $('#textInput').bind('input propertychange', function () {
 
-      $('#braileInput').val(Braile.convertToBraile($('#textInput').val().toLowerCase()));
+      $('#braileInput').val(Braile.convertToBraile($('#textInput').val()));
 
     });
+
+    $(function () {
+        var _default = "Hello World";
+        nextCharacter(_default, 0);
+      }
+    );
+
+    function nextCharacter (str, i) {
+      console.log('write ' + str[i]);
+      setTimeout(function(){
+        $('#textInput').val($('#textInput').val() + str[i]);
+        $('#braileInput').val(
+          Braile.convertToBraile($('#textInput').val())
+        );
+
+        $('#textInput').change();
+        if(str.length > i + 1)
+          nextCharacter(str, i + 1);
+      },200)
+    };
   </script>
 </body>
 </html>

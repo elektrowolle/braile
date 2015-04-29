@@ -30,6 +30,10 @@ Braile.convertToBraile = function(str, lng){
 
 Braile.convertFromBraile = function(str, lng){
     var returnStr = '';
+    str = str.replace('.' , '-');
+    str = str.replace(' ' , '');
+    str = str.toLowerCase();
+
     var newstr = str.split(endOfLine);
     var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {

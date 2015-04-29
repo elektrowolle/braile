@@ -55,7 +55,10 @@ Braile.convertFromBraile = function(str, lng){
             }
 
         }
-        console.log('skipped \n' + newstr[0] + '\n' + newstr[1] + '\n' + newstr[2] );
+        console.log('skipped \n' +
+            newstr[0][i - 1] + newstr[0][i] + '\n' +
+            newstr[1][i - 1] + newstr[1][i] + '\n' +
+            newstr[2][i - 1] + newstr[2][i] );
     };
     return returnStr;
 }

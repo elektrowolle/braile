@@ -13,11 +13,14 @@ Braile.convertToBraile = function(str, lng){
     var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 0;  i < str.length; i++) {
         var character = str[i].toLowerCase();
-        if(character && braile[character.toLowerCase()]){
+        if(character && typeof braile[character.toLowerCase()] != 'undefined'){
             var characterParts = braile[character].split(' ');
             line[0] = line[0].concat(characterParts[0]);
             line[1] = line[1].concat(characterParts[1]);
             line[2] = line[2].concat(characterParts[2]);
+        }
+        else{
+            console.log("skipped " + character);
         }
     };
     var returnStr =
@@ -48,10 +51,11 @@ Braile.convertFromBraile = function(str, lng){
                 ) == braile[_iBraile]){
 
                 returnStr = returnStr.concat(_iBraile);
+                break;
             }
 
-        };
-
+        }
+        console.log('skipped \n' + newstr[0] + '\n' + newstr[1] + '\n' + newstr[2] );
     };
     return returnStr;
 }

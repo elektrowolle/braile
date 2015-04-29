@@ -33,11 +33,11 @@ Braile.convertFromBraile = function(str, lng){
     str = str.replace(/\./g , '-');
     str = str.replace(/ /g , '');
     str = str.toLowerCase();
+    var newstr = str.split(endOfLine);
 
     if(newstr.length < 3)
         return;
 
-    var newstr = str.split(endOfLine);
     var braile = Braile.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {
         for (var _iBraile in braile) {

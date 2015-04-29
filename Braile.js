@@ -30,8 +30,8 @@ Braile.convertToBraile = function(str, lng){
 
 Braile.convertFromBraile = function(str, lng){
     var returnStr = '';
-    str = str.replace('.' , '-');
-    str = str.replace(' ' , '');
+    str = str.replace(/\./g , '-');
+    str = str.replace(/ /g , '');
     str = str.toLowerCase();
 
     if(newstr.length < 3)

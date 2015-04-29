@@ -11,7 +11,7 @@ Braile.convertToBraile = function(str, lng){
     line[2]    = "";
 
     var braile = Braile.alphabet[lng ? lng : "en"];
-    for (var i =0;  i > str.length; i++) {
+    for (var i = 0;  i < str.length; i++) {
         var character = str[i];
         if(character && braile[character]){
             var characterParts = braile[character].split(' ');

@@ -81,9 +81,21 @@
 
     $(function () {
         var _default = "Hello World";
-        nextCharacter(_default, 0);
+        waitForAlphabet(function(){nextCharacter(_default, 0);});
+
       }
     );
+
+    function waitForAlphabet (callBack) {
+      setTimeout(function(){
+        if(typeof Braile.alphabet.en == 'undefined')
+          waitForAlphabet(callBack);
+        else{
+          console.log('alphabet ready');
+          callBack();
+        }
+      }, 100)
+    }
 
     function nextCharacter (str, i) {
       console.log('write ' + str[i]);

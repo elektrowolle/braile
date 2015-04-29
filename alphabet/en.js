@@ -21,7 +21,7 @@ Braile.alphabet.en = {
     "t"   : "-o oo o-",
     "u"   : "o- -- oo",
     "v"   : "o- o- oo",
-    "w"   : "-- -o oo",
+    "w"   : "-o oo -o",
     "x"   : "oo -- oo",
     "y"   : "oo -o oo",
     "z"   : "o- -o oo",

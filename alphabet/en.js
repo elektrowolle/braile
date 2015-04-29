@@ -47,7 +47,7 @@ Braile.alphabet.en = {
     "ff"  : "-- oo o-",
     "gg"  : "-- oo oo",
     "in"  : "-- -o o-",
-    "  "  : "-- -- --"
+    " "   : "-- -- --"
 }
 
 if(typeof module != "undefined")

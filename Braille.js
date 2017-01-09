@@ -1,4 +1,4 @@
-var rawgit = 'https://rawgit.com/elektrowolle/braile/master/';
+var rawgit = 'https://rawgit.com/elektrowolle/braille/master/';
 var endOfLine = '\n';
 var Braille = {};
 Braille.alphabet = {};

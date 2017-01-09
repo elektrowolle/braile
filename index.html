@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Braile COnverter</title>
+  <title>Braille COnverter</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="stylesheets/marketing.css">
@@ -22,7 +22,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/languages/bash.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/languages/javascript.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
-  <script type="text/javascript" src="https://rawgit.com/elektrowolle/braile/master/Braile.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/elektrowolle/braille/master/Braille.js"></script>
   <style type="text/css">
     .button-xsmall {
         font-size: 70%;
@@ -49,7 +49,7 @@
 <body>
   <div class="splash-container">
       <div class="splash">
-          <h1 class="splash-head">Braile Converter</h1>
+          <h1 class="splash-head">Braille Converter</h1>
 
       </div>
   </div>
@@ -57,16 +57,16 @@
     <div class="content">
       <div class="ribbon l-box-lrg pure-g">
         <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-          <h2 class="content-head content-head-ribbon">From Braile</h2>
+          <h2 class="content-head content-head-ribbon">From Braille</h2>
           <div id="trigger1" class="spacer s0"></div>
           <form class="pure-form">
             <fieldset class="pure-group">
-              <textarea class="pure-input-1" id="braileInput"></textarea>
+              <textarea class="pure-input-1" id="brailleInput"></textarea>
             </fieldset>
           </form>
         </div>
         <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-          <h2 class="content-head content-head-ribbon">To Braile</h2>
+          <h2 class="content-head content-head-ribbon">To Braille</h2>
            <form class="pure-form">
             <fieldset>
               <input type="text" id="textInput">
@@ -79,17 +79,17 @@
         <h2 class="content-head is-center">Check it out!</h2>
         <h3>Use as cdn</h3>
         <pre><code class='html'><!--
-             -->&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.rawgit.com/elektrowolle/braile/master/Braile.js&quot;&gt;&lt;/script&gt;<!--
+             -->&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.rawgit.com/elektrowolle/braille/master/Braille.js&quot;&gt;&lt;/script&gt;<!--
          --></code></pre>
 
         <h3>Or pull the git</h3>
         <pre><code class='sh'><!--
-           -->git clone https://github.com/elektrowolle/braile.git<!--
+           -->git clone https://github.com/elektrowolle/braille.git<!--
          --></code></pre>
 
         <h3>Then use it!</h3>
         <pre><code class=''><!--
-           -->var str = Braile.convertToBraile('hello world');
+           -->var str = Braille.convertToBraille('hello world');
 <!--
            -->console.log(str);
 
@@ -97,13 +97,13 @@
 <!--           -->// oo-oo-o--o--oo-oooo--o
 <!--           -->// ----o-o-o----oo-o-o---
 
-<!--           -->console.log(Braile.convertFromBraile(str));
+<!--           -->console.log(Braille.convertFromBraille(str));
 <!--
            -->//hello world<!--
          --></code></pre>
 
         <h3>Look it up!</h3>
-        At <a href="https://github.com/elektrowolle/braile">Github</a>
+        At <a href="https://github.com/elektrowolle/braille">Github</a>
 
         <hr>
         Benjamin Skirlo 2015
@@ -117,12 +117,12 @@
 
   var controller = {};
   var scene = {};
-    $('#braileInput').bind('input propertychange', function () {
-      $('#textInput').val(Braile.convertFromBraile($('#braileInput').val()));
+    $('#brailleInput').bind('input propertychange', function () {
+      $('#textInput').val(Braille.convertFromBraille($('#brailleInput').val()));
     });
     $('#textInput').bind('input propertychange', function () {
 
-      $('#braileInput').val(Braile.convertToBraile($('#textInput').val()));
+      $('#brailleInput').val(Braille.convertToBraille($('#textInput').val()));
 
     });
 
@@ -140,8 +140,8 @@
                     // .addIndicators() // add indicators (requires plugin)
                     .on("start", function (e) {
                       console.log("start animation");
-                      if($('#braileInput').val() == ''){
-                        $('#braileInput').val('');
+                      if($('#brailleInput').val() == ''){
+                        $('#brailleInput').val('');
                         $('#textInput').val('');
                         nextCharacter(_default, 0);
                       }
@@ -159,7 +159,7 @@
 
     function waitForAlphabet (callBack) {
       setTimeout(function(){
-        if(typeof Braile.alphabet.en == 'undefined')
+        if(typeof Braille.alphabet.en == 'undefined')
           waitForAlphabet(callBack);
         else{
           console.log('alphabet ready');
@@ -172,8 +172,8 @@
       console.log('write ' + str[i]);
       setTimeout(function(){
         $('#textInput').val($('#textInput').val() + str[i]);
-        $('#braileInput').val(
-          Braile.convertToBraile($('#textInput').val())
+        $('#brailleInput').val(
+          Braille.convertToBraille($('#textInput').val())
         );
 
         $('#textInput').change();

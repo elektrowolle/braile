@@ -1,20 +1,20 @@
 var rawgit = 'https://rawgit.com/elektrowolle/braile/master/';
 var endOfLine = '\n';
-var Braile = {};
-Braile.alphabet = {};
+var Braille = {};
+Braille.alphabet = {};
 require([typeof local != 'undefined' ? 'alphabet/en.js' : rawgit + 'alphabet/en.js']);
 
-Braile.convertToBraile = function(str, lng){
+Braille.convertToBraille = function(str, lng){
     var line   = [];
     line[0]    = "";
     line[1]    = "";
     line[2]    = "";
 
-    var braile = Braile.alphabet[lng ? lng : "en"];
+    var braille = Braille.alphabet[lng ? lng : "en"];
     for (var i = 0;  i < str.length; i++) {
         var character = str[i].toLowerCase();
-        if(character && typeof braile[character] != 'undefined'){
-            var characterParts = braile[character].split(' ');
+        if(character && typeof braille[character] != 'undefined'){
+            var characterParts = braille[character].split(' ');
             line[0] = line[0].concat(characterParts[0]);
             line[1] = line[1].concat(characterParts[1]);
             line[2] = line[2].concat(characterParts[2]);
@@ -31,7 +31,7 @@ Braile.convertToBraile = function(str, lng){
     return returnStr;
 }
 
-Braile.convertFromBraile = function(str, lng){
+Braille.convertFromBraille = function(str, lng){
     var returnStr = '';
     str = str.replace(/\./g , '-');
     str = str.replace(/ /g , '');
@@ -41,16 +41,16 @@ Braile.convertFromBraile = function(str, lng){
     if(newstr.length < 3)
         return;
 
-    var braile = Braile.alphabet[lng ? lng : "en"];
+    var braille = Braille.alphabet[lng ? lng : "en"];
     for (var i = 1; i < newstr[0].length; i += 2) {
-        for (var _iBraile in braile) {
+        for (var _iBraille in braille) {
             if((
                 newstr[0][i - 1] + newstr[0][i] + ' ' +
                 newstr[1][i - 1] + newstr[1][i] + ' ' +
                 newstr[2][i - 1] + newstr[2][i]
-                ) == braile[_iBraile]){
+                ) == braille[_iBraille]){
 
-                returnStr = returnStr.concat(_iBraile);
+                returnStr = returnStr.concat(_iBraille);
                 break;
             }
 
@@ -64,4 +64,4 @@ Braile.convertFromBraile = function(str, lng){
 }
 
 if(typeof module != "undefined")
-    module.export = Braile;
+    module.export = Braille;

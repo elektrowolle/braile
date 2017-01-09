@@ -2,7 +2,7 @@
   "name": "simple-braille",
   "version": "0.1.0",
   "description": "A little converter to convert from and to braille",
-  "main": "main.js",
+  "main": "Braille.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
